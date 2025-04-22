@@ -1,4 +1,8 @@
+package tests;
+
 import com.codeborne.selenide.Configuration;
+import helpers.Attach;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -10,6 +14,10 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 public class RegistrationTests {
+    @AfterEach
+    void addAttachments(){
+        Attach.screenshotAs("Last screenshot");
+    }
     @BeforeAll
     static void beforeAll(){
         Configuration.browserSize="1920x1080";
