@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group = 'quru.qa'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation ('org.junit.jupiter:junit-jupiter',
+            'com.codeborne:selenide:7.9.0',
+            "org.slf4j:slf4j-api:2.0.17")
+}
+
+test {
+    useJUnitPlatform()
+}
